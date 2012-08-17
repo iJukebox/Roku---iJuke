@@ -12,12 +12,12 @@ Function Check_play()
     'parse the raw xml into something to be used
     stat = xml.status.getText()
     'parse for the "satus" tag and return the text as a string to be compared
-    if (stat = "0")
-        return false
-        end if
-        'if status returns "0" the method will return false
+    
     if (stat = "1")
         return true
+        else
+            return false
+            'this makes it so if the xml dies it won't infinite loop
         end if
         'if status returns "1" the method will return true
 

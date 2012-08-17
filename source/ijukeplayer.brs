@@ -50,8 +50,10 @@ Function displayVideo(Host_Data) as Object
                      ' when the song ends, this happens
                          if msg.isScreenClosed()
                             Update_Status(Host_Data["host_id"], media_loc, played)
+                            'updates the status of the song to finished
                             print "done"
                             exit while
+                            
                              '   if (Check_Play() = false)
                               '      screen.Close()
                                '     exit while
@@ -59,6 +61,7 @@ Function displayVideo(Host_Data) as Object
                             
                             'maybe set the update status here as well    
                          end if
+                         ' it is important to exit the while loop so that the roku doesn't get stuck
                 end if
        end while
  

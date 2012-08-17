@@ -7,6 +7,6 @@ Function Update_Status(host_id, media, num)
     'mainly used to make the POST and return the raw string, nothing needs to be done with this for
     'now
     print xmlraw
-    'can pring the raw xml to the debugger, useful for debugging
+    'can print the raw xml to the debugger, useful for debugging
 End Function
 'Method Simply update's the status of the song played, either to 3 for now playing, or 1 for played
