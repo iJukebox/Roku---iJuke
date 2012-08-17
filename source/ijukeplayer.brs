@@ -34,29 +34,31 @@ Function displayVideo(Host_Data) as Object
         while (1)
             msg = wait(0, screen.GetMessagePort())
             if msg <> invalid
-                if msg.isFullResult()
-                    print "this has been paused, yo" 
+                'if msg.isFullResult()
+                 '   print "this has been paused, yo" 
                         'Update_Status(played, media_loc, aa["host_id"])
-                        Update_Status(Host_Data["host_id"], media_loc, played)
+                  '      Update_Status(Host_Data["host_id"], media_loc, played)
                         
-                        if (Check_Play() = false)
-                            screen.Close()
-                            exit while
-                            end if
+                        
                         'displayVideo(Host_Data)'MLocation_Request(media_req)["location"],
-                        media_loc = Change_Content(screen, Host_Data)
+                       ' media_loc = Change_Content(screen, Host_Data)
                         'Update_Status(Host_Data["host_id"], media_loc, now_playing)
-                        screen.Show()
+                       ' screen.Show()
                         'Update_Status(now_playing, media_loc, aa["host_id"])
                         'screen.Close()
-                        print "yo"
+'                        print "yo"
                      ' when the song ends, this happens
-                        else if msg.isScreenClosed()
+                         if msg.isScreenClosed()
                             Update_Status(Host_Data["host_id"], media_loc, played)
                             print "done"
                             exit while
+                             '   if (Check_Play() = false)
+                              '      screen.Close()
+                               '     exit while
+                            'end if
+                            
                             'maybe set the update status here as well    
-                        end if
+                         end if
                 end if
        end while
  
